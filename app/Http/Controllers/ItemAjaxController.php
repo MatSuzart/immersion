@@ -6,6 +6,11 @@ use App\Item;
 
 class ItemAjaxController extends Controller
 {
+    public function ItemAjax()
+    {
+        return view('item-ajax');
+    }
+
     public function index(Request $request){
         $item = Item::all();
         return response()->json($items);
@@ -18,7 +23,7 @@ class ItemAjaxController extends Controller
 
     public function update(Request $request, $id){
         $edit = Item::find($id)->update($request->all());
-        return respponse()->json($edit);
+        return response()->json($edit);
     }
 
     public function destroy($id){
