@@ -6,13 +6,14 @@ use App\Item;
 
 class ItemAjaxController extends Controller
 {
-    public function ItemAjax()
+
+    public function manageItemAjax()
     {
-        return view('item-ajax');
+        return view('manage-item-ajax');
     }
 
     public function index(Request $request){
-        $item = Item::all();
+        $items = Item::latest()->paginate(5);
         return response()->json($items);
     }
 

@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('item-ajax', 'ItemAjaxController@manageItemAjax');
+Route::get('manage-item-ajax', 'ItemAjaxController@manageItemAjax');
 Route::resource('item-ajax', 'ItemAjaxController');
